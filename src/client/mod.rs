@@ -1,7 +1,7 @@
 /// Client is for calling EtherScan API
 pub struct Client {
-    key: String, // Api Key
-    web: reqwest::Client, // Reqwest Client
+    pub key: String, // Api Key
+    pub web: reqwest::Client, // Reqwest Client
 }
 
 impl Client {
