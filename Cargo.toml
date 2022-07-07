@@ -14,6 +14,6 @@ keywords = ["api", "ethereum", "etherscan", "crypto", "cryptocurrency", "gas", "
 
 [dependencies]
 tokio = { version = "1.19.2", features = ["full"] }
-reqwest = { version = "0.11.11" }
+reqwest = { version = "0.11.11", features = ["json"] }
 serde = { version = "1.0.138", features = ["derive"] }
 serde_json = { version = "1.0.82" }
