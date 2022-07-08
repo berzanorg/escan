@@ -1,6 +1,7 @@
 mod client;
 mod response;
 mod enums;
+mod endpoints;
 
 pub use client::*;
 pub use enums::*;
