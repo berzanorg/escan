@@ -22,6 +22,8 @@ add Escan to dependencies list in Cargo.toml
   # other deps
   escan = "0.1.0"
   # other deps
+  # also don't forget to add Tokio runtime
+  tokio = { version = "1.19.2", features = ["full"] }
 ```
 
 ### API Endpoints
