@@ -1,9 +1,10 @@
 mod client;
 mod response;
+mod endpoints;
+mod enums;
 
 #[cfg(test)]
 mod tests {
-    use crate::response;
 
     #[test]
     fn it_works() {
