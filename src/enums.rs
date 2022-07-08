@@ -1,3 +1,4 @@
+/// Can be `Earliest`, `Pending`, or `Latest`
 pub enum Tag {
     Earliest,
     Pending,
@@ -15,6 +16,7 @@ impl Tag {
 }
 
 
+/// Can be `Asc`, or `Desc`
 pub enum Sort {
     Asc,
     Desc,
@@ -30,6 +32,7 @@ impl Sort {
 }
 
 
+/// Can be: `Blocks`, or `Uncles`
 pub enum BlockType {
     Blocks,
     Uncles,
