@@ -1,7 +1,9 @@
 mod client;
 mod response;
-mod endpoints;
 mod enums;
+
+pub use client::*;
+pub use enums::*;
 
 #[cfg(test)]
 mod tests {
