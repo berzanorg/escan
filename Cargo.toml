@@ -8,7 +8,7 @@ edition = "2021"
 readme = "README.md"
 repository = "https://github.com/BerzanXYZ/escan"
 categories = ["web-programming"]
-keywords = ["api", "ethereum", "etherscan", "crypto", "cryptocurrency", "gas", "gwei"]
+keywords = ["api", "ethereum", "etherscan", "crypto", "gas"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
