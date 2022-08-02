@@ -3,15 +3,14 @@ use serde::Deserialize;
 
 
 use crate::client::Client;
-use crate::response::Response;
 use crate::enums::Sort;
 
 impl Client {
-    /// Gets a list of ERC20 token transfers by address 
+    /// Gets a list of ERC20 or BEP20 token transfers by address 
     pub async fn transfers_erc20(&self, contract_address: &str, address: &str, page: u32, offset: u32, start_block: u32, end_block: u32, sort: Sort) -> Result<Vec<Transfer>, Box<dyn Error>> {
-        // Builds the URL
-        let url = format!(
-            "https://api.etherscan.io/api?module=account&action=tokentx&contractaddress={}&address={}&page={}&offset={}&startblock={}&endblock={}&sort={}&apikey={}",
+        // Builds the path
+        let path = format!(
+            "?module=account&action=tokentx&contractaddress={}&address={}&page={}&offset={}&startblock={}&endblock={}&sort={}",
             contract_address,
             address,
             page,
@@ -19,10 +18,9 @@ impl Client {
             start_block,
             end_block,
             sort.to_str(),
-            self.key,
         );
         // Returns
-        Ok(self.web.get(url).send().await?.json::<Response<Vec<Transfer>>>().await?.result)
+        self.request(path).await
     }
 }
 

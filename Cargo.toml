@@ -1,14 +1,14 @@
 [package]
 name = "escan"
-version = "0.1.1"
-description = "Ξ Escan is a Rust API wrapper for Etherscan"
+version = "0.2.0"
+description = "Ξ Escan is a Rust API wrapper for Etherscan and its derivatives"
 authors = ["Berzan <berzan@tutanota.com>"]
 license = "MIT"
 edition = "2021"
 readme = "README.md"
 repository = "https://github.com/BerzanXYZ/escan"
 categories = ["web-programming"]
-keywords = ["api", "ethereum", "etherscan", "crypto", "gas"]
+keywords = ["binance", "ethereum", "etherscan", "crypto", "gas"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

@@ -2,25 +2,23 @@ use std::error::Error;
 use serde::Deserialize;
 
 use crate::client::Client;
-use crate::response::Response;
 use crate::enums::Sort;
 
 
 impl Client {
     /// Gets a list of internal transactions performed within a block range
     pub async fn transactions_by_range(&self, start_block: u32, end_block: u32, page: u32, offset: u32, sort: Sort) -> Result< Vec<Transaction>, Box<dyn Error>> {
-        // Builds the URL
-        let url = format!(
-            "https://api.etherscan.io/api?module=account&action=txlistinternal&startblock={}&endblock={}&page={}&offset={}&sort={}&apikey={}",
+        // Builds the path
+        let path = format!(
+            "?module=account&action=txlistinternal&startblock={}&endblock={}&page={}&offset={}&sort={}",
             start_block,
             end_block,
             page,
             offset,
             sort.to_str(),
-            self.key,
         );
         // Returns
-        Ok(self.web.get(url).send().await?.json::<Response<Vec<Transaction>>>().await?.result)
+        self.request(path).await
     }
 }
 

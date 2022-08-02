@@ -1,3 +1,20 @@
+/// Can be `Ethereum` or `BinanceSmartChain`
+pub enum Chain {
+    Ethereum,
+    BinanceSmartChain,
+}
+
+impl Chain {
+    pub fn to_str(&self) -> &str {
+        match self {
+            Self::Ethereum => "https://api.etherscan.io/api",
+            Self::BinanceSmartChain => "https://api.bscscan.com/api",
+        }
+    }
+}
+
+
+
 /// Can be `Earliest`, `Pending`, or `Latest`
 pub enum Tag {
     Earliest,

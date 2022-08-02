@@ -1,18 +1,23 @@
 # escan
-Ξ Escan is a Rust API wrapper for Etherscan
+Ξ Escan is a Rust API wrapper for Etherscan and its derivatives
 
 > A production ready Rust Crate to work with Ethereum blockchain data
 
 ```rust
   // Create your client
-  let client = Client::new(API_TOKEN);
+  let client = Client::new(API_TOKEN, Chain::Ethereum); // Or Chain::BinanceSmartChain
   // Get balance of an address
-  let bal = client.ether_balance("0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8", Tag::Latest).await?;
+  let bal = client.balance("0xBE0eB53F46cd790Cd13851d5EFf43D12404d33E8", Tag::Latest).await?;
   // Print it
   println!("{} ETH", bal);
   // Prints:
   // "1.927 ETH"
 ```
+
+### Supported Chains
+- Ethereum
+- Binance Smart Chain
+> New chain supports are coming
 
 ### Usage
 add Escan to dependencies list in Cargo.toml
